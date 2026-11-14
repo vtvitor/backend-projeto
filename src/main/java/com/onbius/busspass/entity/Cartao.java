@@ -15,6 +15,12 @@ public class Cartao {
 
     private String numero;
 
+    @Column(name = "nome")
+    private String nome;
+
+    @Column(name = "cpf")
+    private String cpf;
+
     @Column(name = "saldo_centavos")
     private Integer saldoCentavos = 0;
 
@@ -31,6 +37,12 @@ public class Cartao {
 
     public String getNumero() { return numero; }
     public void setNumero(String numero) { this.numero = numero; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+
+    public String getCpf() { return cpf; }
+    public void setCpf(String cpf) { this.cpf = cpf; }
 
     public Integer getSaldoCentavos() { return saldoCentavos; }
     public void setSaldoCentavos(Integer saldoCentavos) { this.saldoCentavos = saldoCentavos; }
