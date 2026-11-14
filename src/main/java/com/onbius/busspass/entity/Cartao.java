@@ -18,6 +18,9 @@ public class Cartao {
     @Column(name = "saldo_centavos")
     private Integer saldoCentavos = 0;
 
+    @Column(name = "bloqueado")
+    private Boolean bloqueado = false;
+
     public Cartao() {}
 
     public Long getId() { return id; }
@@ -31,4 +34,7 @@ public class Cartao {
 
     public Integer getSaldoCentavos() { return saldoCentavos; }
     public void setSaldoCentavos(Integer saldoCentavos) { this.saldoCentavos = saldoCentavos; }
+
+    public boolean isBloqueado() { return Boolean.TRUE.equals(bloqueado); }
+    public void setBloqueado(boolean bloqueado) { this.bloqueado = bloqueado; }
 }
