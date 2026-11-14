@@ -52,6 +52,15 @@ public class CartaoController {
         return resp;
     }
 
+    public record BloqueioRequest(Long usuarioId, String senha) {}
+
+    @PostMapping("/{id}/bloquear")
+    public Map<String, Object> bloquear(@PathVariable Long id,
+                                        @RequestBody BloqueioRequest dados) {
+        service.bloquear(id, dados.usuarioId(), dados.senha());
+        return Map.of("sucesso", true);
+    }
+
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
         service.deletar(id);
